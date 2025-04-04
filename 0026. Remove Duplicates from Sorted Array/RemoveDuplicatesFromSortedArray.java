@@ -53,6 +53,15 @@ import java.util.Arrays;
  */
 public class RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
+        int k = 0;
+        for (int x : nums) {
+            if (k == 0 || x != nums[k - 1]) {
+                nums[k++] = x;
+            }
+        }
+        return k;
+    }
+    public int removeDuplicates2(int[] nums) {
         int i=0;
         for(int j=1;j<nums.length;j++){
             if(nums[j]!=nums[i]){
@@ -64,9 +73,14 @@ public class RemoveDuplicatesFromSortedArray {
     }
 
     public static void main(String[] args) {
-        int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 77, 77, 77, 77, 77, 77};
-        int k = new RemoveDuplicatesFromSortedArray().removeDuplicates(nums);
+        int[] nums1 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5, 5, 5, 5, 77, 77, 77, 77, 77, 77};
+        int[] nums2 = {0, 0, 1, 1, 1, 2, 2, 2, 4, 4, 4};
+        int k = new RemoveDuplicatesFromSortedArray().removeDuplicates(nums1);
+        System.out.println(Arrays.toString(nums1));
+        int m = new RemoveDuplicatesFromSortedArray().removeDuplicates2(nums2);
+        System.out.println(Arrays.toString(nums2));
         System.out.println(k);
+        System.out.println(m);
 
     }
 }
