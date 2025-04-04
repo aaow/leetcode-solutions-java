@@ -64,8 +64,8 @@ public class MergeTwoSortedLists {
     }
 
     public static void main(String[] args) {
-        Integer[] list1 = new Integer[]{2, 4, 5, 10};
-        Integer[] list2 = new Integer[]{3, 7, 8, 13};
+        int[] list1 = {2, 4, 5, 10};
+        int[] list2 = {3, 7, 8, 13};
         ListNode head1 = null;
         for (int i = list1.length-1; i >= 0; i--) {
             int val = list1[i];
